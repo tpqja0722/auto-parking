@@ -1,0 +1,85 @@
+/*
+ * SENSOR_TEST.c
+ *
+ * Created: 2019-11-07 ¿ÀÈÄ 6:39:41
+ * Author: SeongHwan
+ */
+
+#include <mega128.h>
+#include <stdio.h>
+#include <delay.h>
+
+#define SENSOR PINA
+#include "uart_lib.h"
+#include "my_Esp8266.h"
+
+unsigned char aaa;
+unsigned char buf[8];
+unsigned char bi;
+char i;
+
+void main(void)
+{
+
+    DDRA = 0x00;
+    PORTA = 0xff;                 
+    
+    #asm("sei"); 
+    
+    
+    
+    uart0_init();
+    uart1_init();
+    
+    esp8266_init();
+       
+ 
+
+while (1)
+    {   
+        bi = SENSOR;
+        bi = ~bi;
+        
+        
+        buf[7] = bi/128%2;
+        buf[6] = bi/64%2;
+        buf[5] = bi/32%2;
+        buf[4] = bi/16%2;
+        buf[3] = bi/8%2;
+        buf[2] = bi/4%2;
+        buf[1] = bi/2%2;
+        buf[0] = bi%2;
+        
+        esp_tx_test();
+                     
+        tx_send('A', 0);
+        tx_send(',', 0);
+        tx_send(buf[7] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[6] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[5] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[4] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[3] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[2] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[1] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send(buf[0] + 0x30, 0);
+        tx_send(',', 0);
+        tx_send('\n', 0);
+        
+           
+    
+     
+        delay_ms(100);
+         
+             
+    
+    
+
+    }
+}

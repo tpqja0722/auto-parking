@@ -1,0 +1,12 @@
+VERSION:3 SOURCE_TIMESTAMP:4F69AA7A
+NODE:I LEVEL:0 LINE:8 "C:\cvavreval\inc\mega128.h"
+NODE:I LEVEL:0 LINE:9 "C:\cvavreval\inc\stdio.h"
+NODE:I LEVEL:0 LINE:10 "C:\cvavreval\inc\delay.h"
+NODE:M LEVEL:0 LINE:12 "SENSOR"
+NODE:I LEVEL:0 LINE:13 "C:\Users\SeongHwan\Desktop\SENSOR\uart_lib.h"
+NODE:I LEVEL:0 LINE:14 "C:\Users\SeongHwan\Desktop\SENSOR\my_Esp8266.h"
+NODE:V LEVEL:0 LINE:16 "aaa -> R7"
+NODE:V LEVEL:0 LINE:17 "buf -> RAM:????"
+NODE:V LEVEL:0 LINE:18 "bi -> R6"
+NODE:V LEVEL:0 LINE:19 "i -> R9"
+NODE:F LEVEL:0 LINE:21 "main(void)"

@@ -1,0 +1,47 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+rx_bt                                                                             0x0500      20
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+bt_flag                                                                           R5           1
+cnt                                                                               R4           1
+left                                                                              R7           1
+right                                                                             R6           1
+rx0_end_flag                                                                      R2.0      1bit
+rx1_end_flag                                                                      R2.1      1bit
+rx0_cnt                                                                           R9           1
+rx1_cnt                                                                           R8           1
+gg                                                                                R11          1
+sensor                                                                            R10          1
+chk_flag                                                                          R2.2      1bit
+cnt_back                                                                          R13          1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+uart0_init                                                                        0x000D0     13
+uart1_init                                                                        0x000DD     16
+tx_chk                                                                            0x000ED     19
+tx_send                                                                           0x00100     22
+usart0_rx_int                                                                     0x00116      9
+usart1_rx_int                                                                     0x0011F     32
+gogo_left                                                                         0x0013F      8
+gogo_right                                                                        0x00147      8
+station_1                                                                         0x0014F     44
+station_2                                                                         0x0017B     44
+station_3                                                                         0x001A7     52
+station_4                                                                         0x001DB     53
+station_5                                                                         0x00210     61
+station_6                                                                         0x0024D     61
+station_7                                                                         0x0028A     63
+station_8                                                                         0x002C9     63
+go_home_odd                                                                       0x00308     86
+go_home_even                                                                      0x0035E     69
+main                                                                              0x003A3    108
